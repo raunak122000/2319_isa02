@@ -5,7 +5,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    bat "docker build -t raunak122000/2319_isa2 ."
+                    bat "docker build -t raunak122000/2319_isa02 ."
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    bat "docker run -d --name my-app-container raunak122000/2319_isa2"
+                    bat "docker run -d --name my-app-container raunak122000/2319_isa02"
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
     post {
         always {
             script {
-                bat "docker rmi -f raunak122000/2319_isa2 || true"
+                bat "docker rmi -f raunak122000/2319_isa02 || true"
             }
         }
     }
